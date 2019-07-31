@@ -7,8 +7,9 @@ Example
 ----
 
 
-import requests
+```python
 
+import requests
 
 class Person(object):
 
@@ -19,6 +20,9 @@ class Person(object):
     def get_passport(self):
         return requests.post(url="http://foo.bar", data={"name": self.name})
 
+```
+
+```python
 
 class Order(object):
 
@@ -29,11 +33,21 @@ class Order(object):
     def get_person_buyer(self):
         return self.person_buyer
 
+```
+
+Foo
+
+```python
 
 person = Person("123456", "mmatheus")
 
 person_name = Order(person, "123456").get_person_buyer().get_passport()
 
+```
+
+Foo
+
+```python
 
 class StubPerson(object):
 
@@ -42,6 +56,9 @@ class StubPerson(object):
         self.name = name
         self.get_passport = lambda: "12345678790"
 
+```
+
+```python
 
 class StubOrder(object):
 
@@ -51,6 +68,11 @@ class StubOrder(object):
         self.get_person_buyer = lambda: StubOrder(self.identifier, self.get_person_buyer)
         self.get_passport = lambda: "12345678790"
 
+```
+
+```python
 
 stub_person = StubPerson("123456", "mmatheus")
 stub_person_name = StubOrder(stub_person, "123456").get_person_buyer().get_passport()
+
+```
