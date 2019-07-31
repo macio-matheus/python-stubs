@@ -1,6 +1,6 @@
 # python-stubs
 
-A simple way to create class Stubs in python
+A simple way to create class Stubs in Python
 
 
 Example
